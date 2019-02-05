@@ -34,9 +34,9 @@ public class UserMealsUtil {
 
     private static List<UserMealWithExceed> getFilteredWithExceeded(List<UserMeal> mealList, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
         Map<LocalDate, Integer> mapCaloriesPerDay = new HashMap<>();
-        LocalDate ld;
+
         for (UserMeal item : mealList) {
-            ld = item.getDateTime().toLocalDate();
+            LocalDate ld = item.getDateTime().toLocalDate();
             mapCaloriesPerDay.put(ld, mapCaloriesPerDay.getOrDefault(ld, 0) + item.getCalories());
         }
 
