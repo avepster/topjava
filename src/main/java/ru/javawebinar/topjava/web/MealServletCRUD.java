@@ -11,14 +11,14 @@ import java.io.IOException;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class MealServlet extends HttpServlet {
-    private static final Logger log = getLogger(MealServlet.class);
+public class MealServletCRUD extends HttpServlet {
+    private static final Logger log = getLogger(MealServletCRUD.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        log.debug("redirect to meals");
+        log.debug("redirect to meals with CRUD");
 
         request.setAttribute("listMeals", MealsUtil.getListMeals(2000));
-        request.getRequestDispatcher("/meals.jsp").forward(request, response);
+        request.getRequestDispatcher("/mealscrud.jsp").forward(request, response);
     }
 }
