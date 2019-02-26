@@ -29,10 +29,12 @@ public class MealRestController {
     }
 
     public void delete(int id) {
+        log.info("delete {}", id);
         service.delete(id, authUserId());
     }
 
-    public void update(Meal meal) {
-        service.update(meal, authUserId());
+    public void update(int id) {
+        log.info("update {}", id);
+        service.update(get(id), authUserId());
     }
 }

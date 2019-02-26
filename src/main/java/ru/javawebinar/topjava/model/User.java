@@ -77,10 +77,6 @@ public class User extends AbstractNamedEntity {
         return password;
     }
 
-    public String getNameId() {
-        return name + "_" + id;
-    }
-
     @Override
     public String toString() {
         return "User (" +

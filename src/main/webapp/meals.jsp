@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
@@ -32,8 +32,9 @@
             <th></th>
         </tr>
         </thead>
+        <jsp:useBean id="meals" scope="request" type="java.util.List"/>
         <c:forEach items="${meals}" var="meal">
-            <jsp:useBean id="meal" scope="page" type="ru.javawebinar.topjava.to.MealTo"/>
+            <jsp:useBean id="meal" type="ru.javawebinar.topjava.to.MealTo"/>
             <tr class="${meal.excess ? 'excess' : 'normal'}">
                 <td>
                         <%--${meal.dateTime.toLocalDate()} ${meal.dateTime.toLocalTime()}--%>
